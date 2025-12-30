@@ -1,0 +1,17 @@
+# Virtual environment
+COAenv/
+
+# Environment variables (API keys!)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+GeminiOutput.md
+JobDescription.txt
+tutorial_cluster.md
