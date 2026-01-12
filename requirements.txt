@@ -8,3 +8,5 @@ langchain-google-genai>=2.0.0
 langchain-core>=0.3.0
 # mcp>=1.0.0
 # fastmcp>=0.1.0
+
+ipython>=7.0.0                    # For displaying images in Jupyter Notebooks

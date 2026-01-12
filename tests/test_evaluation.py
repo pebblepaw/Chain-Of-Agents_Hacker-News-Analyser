@@ -74,11 +74,11 @@ def run_evaluation_suite():
             metrics = evaluate_answer_quality(query, answer)    
 
             print("\n Evaluation results:")
-            print(f"- Answer length: {metrics["answer_length"]} characters")
-            print(f"- Has structure: {metrics["has_structure"]}")
-            print(f"- Mentions time periods: {metrics["mentions_time_periods"]}")
-            print(f"- Has specific data: {metrics["has_specific_data"]}")
-            print(f"- Overall score: {metrics["overall_score"]}/100")   
+            print(f"- Answer length: {metrics['answer_length']} characters")
+            print(f"- Has structure: {metrics['has_structure']}")
+            print(f"- Mentions time periods: {metrics['mentions_time_periods']}")
+            print(f"- Has specific data: {metrics['has_specific_data']}")
+            print(f"- Overall score: {metrics['overall_score']}/100")   
 
             results.append({
                 "test_case": i,

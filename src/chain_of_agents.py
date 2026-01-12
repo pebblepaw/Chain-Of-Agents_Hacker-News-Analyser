@@ -33,9 +33,9 @@ def manager_nodes(state: AgentState) -> AgentState:
     
     # defines time periods for worker nodes to examine 
     
-    print("/n" + "='"*60)
+    print("\n" + "="*60)
     print("Manager Agent activated: planning analysis...")
-    print("/n" + "='"*60)
+    print("\n" + "="*60)
 
     query = state['query']
 
@@ -74,7 +74,7 @@ def worker_node(state: AgentState) -> AgentState:
     period = time_periods[current_index]
 
     print("\n" + "="*60)
-    print(f"🔧 WORKER AGENT: Analyzing {period['label']}...")
+    print(f"WORKER AGENT: Analyzing {period['label']}...")
     print("="*60)
 
     print(f"Fetching HN data for '{state['query']}' in {period['label']}...")
@@ -136,7 +136,7 @@ def synthesizer_node(state: AgentState) -> AgentState:
     # synthesize final answer from period summaries
 
     print("\n" + "="*60)
-    print("🧠 SYNTHESIZER AGENT: Creating final synthesis...")
+    print("SYNTHESIZER AGENT: Creating final synthesis...")
     print("="*60)
 
     llm = get_llm()
@@ -181,10 +181,10 @@ def should_continue_analysis(state: AgentState) -> str:
     total_periods = len(state['time_periods'])
 
     if current_index < total_periods:
-        print(f"\n➡️ Routing: {current_index}/{total_periods} periods done. Continuing...")
+        print(f"\nRouting: {current_index}/{total_periods} periods done. Continuing...")
         return "continue"  # Go back to worker for next period
     else:
-        print(f"\n➡️ Routing: All {total_periods} periods done. Moving to synthesis...")
+        print(f"\nRouting: All {total_periods} periods done. Moving to synthesis...")
         return "synthesize"  # Move to synthesizer
     
 # the agent graph 
@@ -261,14 +261,6 @@ def visualize_graph():
 
     except Exception as e: 
         print(f"Error generating graph visualization: {str(e)}")
-
-    
-
-
-
-
-
-
 
 
 
