@@ -9,6 +9,8 @@ from langgraph.graph import StateGraph, START, END
 
 from hn_tool import search_hn_stories, search_hn_by_date_range
 
+from IPython.display import Image, display
+
 load_dotenv() # loads environment
 
 # state: data structure that flows thru the agents
@@ -242,6 +244,34 @@ def analyse_hn_trends(query: str) -> str:
 
     return final_state['final_answer']
 
+
+# visaulize the agents loop 
+
+def visualize_graph(): 
+
+    try: 
+        chain = create_chain_of_agents_graph()
+
+        png_data = chain.get_graph().draw_mermaid_png()
+
+        with open("chain_of_agents_graph.png", "wb") as f:
+            f.write(png_data)
+        
+        print("Graph visualization saved to chain_of_agents_graph.png")
+
+    except Exception as e: 
+        print(f"Error generating graph visualization: {str(e)}")
+
+    
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
 
     test_queries = [
@@ -257,4 +287,3 @@ if __name__ == "__main__":
     print(f"FINAL RESULT FOR QUERY: {query}")
     print("="*60)
     print(result)
-
