@@ -1,7 +1,7 @@
 import sys
 sys.path.append('src')
 
-from chain_of_agents import analyse_hn_trends
+from chain_of_agents import analyse_hn_trends, visualize_graph
 from config import ChainConfig
 
 def main():
@@ -27,6 +27,8 @@ def main():
         if continue_choice not in ['y', 'yes']:
             print("Exiting. Goodbye!")
             break
+
+    visualize_graph() # generate an image of the graph of agents
 
 if __name__ == '__main__':
     main() 

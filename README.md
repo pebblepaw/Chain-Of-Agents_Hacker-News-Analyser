@@ -44,7 +44,7 @@ START → Planner → Worker → Worker → ... → Manager → END
 3. **Manager Agent**: Synthesizes the final answer from accumulated worker outputs
    - Receives the complete running summary from the last worker
    - Identifies trends and shifts over time
-   - Produces the final comprehensive response
+   - Produces a response including key themes, the evolution of sentiment and focus,m and actionable insights for different user groups. 
 
 ## Key Techniques Employed
 

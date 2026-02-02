@@ -263,7 +263,6 @@ def visualize_graph():
         print(f"Error generating graph visualization: {str(e)}")
 
 
-
 if __name__ == "__main__":
 
     test_queries = [
@@ -274,6 +273,7 @@ if __name__ == "__main__":
 
     query = test_queries[0]
     result = analyse_hn_trends(query)
+    visualize_graph()
 
     print("\n" + "="*60)
     print(f"FINAL RESULT FOR QUERY: {query}")
