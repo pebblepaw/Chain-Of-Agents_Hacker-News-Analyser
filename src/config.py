@@ -14,23 +14,27 @@ class LLMProvider(str,Enum):
 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER","OLLAMA").lower()
 
+# Local models
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL","http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL","qwen2:7b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL","llama3.1:8b")
 
+# Cloud API 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL","gemini-2.5-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL","gemini-2.5-flash") # default 
 
+# Neo4J Knowledge Graph API
 NEO4J_URL = os.getenv("NEO4J_URL","bolt://localhost:7687")
 NEO4J_USERNAME = os.getenv("NEO4J_USERNAME","neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
+# Search APIs
 BRAVE_API_KEY = os.getenv("BRAVE_API_KEY")
 GITHUB_PAT = os.getenv("GITHUB_PAT")
-
 
 # Chunking and Overlaps *** 
 CHUNK_SIZE_TOKENS = int(os.getenv("CHUNK_SIZE_TOKENS", "2000"))
 CHUNK_OVERLAP_TOKENS = int(os.getenv("CHUNK_OVERLAP_TOKENS", "200"))
+# llama3.1:8b actually has a context length of up to 8000 tokens, so this is good
 
 MAX_VALIDATION_RETRIES = int(os.getenv("MAX_VALIDATION_RETRIES", "2"))
 

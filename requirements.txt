@@ -12,3 +12,7 @@ langchain-core>=0.3.0
 # fastmcp>=0.1.0
 
 ipython>=7.0.0                    # For displaying images in Jupyter Notebooks
+
+PyMuPDF>=1.20.0                  # PDF text extraction
+
+

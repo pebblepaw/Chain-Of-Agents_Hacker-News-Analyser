@@ -82,6 +82,7 @@ class Extraction(BaseModel):
             references = self.references + new_references,
             source_id = self.source_id or other.source_id
         )
+    
 class ValidationResult(BaseModel): 
 
     # result of validating an extraction
@@ -92,11 +93,11 @@ class ValidationResult(BaseModel):
 
 ENTITY_TYPES = ['Paper','Person','Technology','Article']
 RELATIONSHIP_TYPES = {
-    'Authored', # Person -> Paper
-    'Cites', # Paper -> Paper
-    'Implements', # Paper -> Technology
-    'Extends', # Paper -> Paper
-    'Discusses', # Article -> Paper/Technology
-    'Related_To', # Technology -> Technology
-    'Introduced' # Paper -> Technology
+    'AUTHORED', # Person -> Paper
+    'CITES', # Paper -> Paper
+    'IMPLEMENTS', # Paper -> Technology
+    'EXTENDS', # Paper -> Paper
+    'DISCUSSES', # Article -> Paper/Technology
+    'RELATES_TO', # Technology -> Technology
+    'INTRODUCED' # Paper -> Technology
 }
